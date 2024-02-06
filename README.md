@@ -14,7 +14,7 @@ Improve the accuracy by loading a calibration table of up to 60 rows into EEPROM
 
 - `2_Documentation/`: datasheet and documentation for the μDummy load unit
 - `3_Mechanical/`: mechanical design files (primarily thermal analysis)
-- `3_Electrical/`: KiCAD design files and LTspcice simulation files
+- `3_Electrical/`: KiCAD design files and LTspice simulation files
 - `4_Software/`: firmware files
   - `uDummyLoad_PIC18F24Q10.X/` firmware for the PIC microcontroller
   - `uDummyLoad_TranslatorArduino/`: Arduino sketch for uploading calibration table to the unit with an Arduino microcontroller
