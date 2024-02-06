@@ -18,3 +18,7 @@ Improve the accuracy by loading a calibration table of up to 60 rows into EEPROM
 - `4_Software/`: firmware files
   - `uDummyLoad_PIC18F24Q10.X/` firmware for the PIC microcontroller
   - `uDummyLoad_TranslatorArduino/`: Arduino sketch for uploading calibration table to the unit with an Arduino microcontroller
+
+ ## License
+
+Apache License, Version 2.0. See `LICENSE`.
