@@ -1,0 +1,21 @@
+Circuit: * C:\users\crossover\Desktop\My Mac Desktop\rf_dummy_50ohm_20W\4_Electrical\rev1\sim\peak_detector_ideal.asc
+
+.OP point found by inspection.
+
+Date: Thu Dec 24 17:49:57 2020
+Total elapsed time: 0.615 seconds.
+
+tnom = 27
+temp = 27
+method = modified trap
+totiter = 141040
+traniter = 141040
+tranpoints = 67300
+accept = 44648
+rejected = 22652
+matrix size = 10
+fillins = 0
+solver = Normal
+Matrix Compiler1: 400 bytes object code size  0.1/0.1/[0.1]
+Matrix Compiler2: 686 bytes object code size  0.1/0.1/[0.1]
+

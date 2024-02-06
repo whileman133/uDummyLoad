@@ -1,0 +1,3 @@
+(sym_lib_table
+  (lib (name frebourg_MCU_Microchip_PIC18)(type Legacy)(uri ${KIPRJMOD}/lib/MCU_Microchip_PIC18.lib)(options "")(descr ""))
+)

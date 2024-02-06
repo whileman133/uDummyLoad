@@ -1,0 +1,870 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr USLetter 11000 8500
+encoding utf-8
+Sheet 1 1
+Title "20W/50Ω µDummy Load with Wattmeter"
+Date "2020-12-26"
+Rev "2"
+Comp "ASMV Electrical"
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L Connector:Conn_Coaxial J1
+U 1 1 5FD87B77
+P 1200 3650
+F 0 "J1" H 1128 3888 50  0000 C CNN
+F 1 "50-Ohm BNC Female" H 1128 3797 50  0000 C CNN
+F 2 "WH_Connector_Coaxial:BNC_TEConnectivity_1478204_Vertical" H 1200 3650 50  0001 C CNN
+F 3 "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=1634503&DocType=Customer+Drawing&DocLang=English" H 1200 3650 50  0001 C CNN
+F 4 "DigiKey" H 1200 3650 50  0001 C CNN "Vendor"
+F 5 "A97581-ND" H 1200 3650 50  0001 C CNN "VendorPN"
+F 6 "TE Connectivity AMP Connectors" H 1200 3650 50  0001 C CNN "Man"
+	1    1200 3650
+	-1   0    0    -1  
+$EndComp
+$Comp
+L Device:R_US R1
+U 1 1 5FD8A216
+P 1550 3850
+F 0 "R1" H 1618 3896 50  0000 L CNN
+F 1 "50 1% 45W" H 1618 3805 50  0000 L CNN
+F 2 "Package_TO_SOT_SMD:TO-252-2_TabPin1" V 1590 3840 50  0001 C CNN
+F 3 "https://www.ohmite.com/assets/docs/res_tkh.pdf?r=false" H 1550 3850 50  0001 C CNN
+F 4 "Ohmite" H 1550 3850 50  0001 C CNN "Man"
+F 5 "DigiKey" H 1550 3850 50  0001 C CNN "Vendor"
+F 6 "TKH45P50R0FECT-ND" H 1550 3850 50  0001 C CNN "VendorPN"
+	1    1550 3850
+	1    0    0    1   
+$EndComp
+$Comp
+L Device:D_Schottky D1
+U 1 1 5FD8CF8F
+P 1900 3650
+F 0 "D1" H 1900 3433 50  0000 C CNN
+F 1 "BAT46" H 1900 3524 50  0000 C CNN
+F 2 "Diode_THT:D_DO-34_SOD68_P7.62mm_Horizontal" H 1900 3650 50  0001 C CNN
+F 3 "https://www.vishay.com/docs/85662/bat46.pdf" H 1900 3650 50  0001 C CNN
+F 4 "Vishay" H 1900 3650 50  0001 C CNN "Man"
+F 5 "DigiKey" H 1900 3650 50  0001 C CNN "Vendor"
+F 6 "BAT46CT-ND" H 1900 3650 50  0001 C CNN "VendorPN"
+	1    1900 3650
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:R_US R3
+U 1 1 5FD969EC
+P 3000 3850
+F 0 "R3" H 3068 3896 50  0000 L CNN
+F 1 "100k 1%" H 3068 3805 50  0000 L CNN
+F 2 "Resistor_SMD:R_1206_3216Metric_Pad1.42x1.75mm_HandSolder" V 3040 3840 50  0001 C CNN
+F 3 "~" H 3000 3850 50  0001 C CNN
+F 4 "DigiKey" H 3000 3850 50  0001 C CNN "Vendor"
+F 5 "541-4173-1-ND" H 3000 3850 50  0001 C CNN "VendorPN"
+F 6 "Vishay Dale" H 3000 3850 50  0001 C CNN "Man"
+	1    3000 3850
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R_US R4
+U 1 1 5FD99AD6
+P 3000 4250
+F 0 "R4" H 3068 4296 50  0000 L CNN
+F 1 "10k 1%" H 3068 4205 50  0000 L CNN
+F 2 "Resistor_SMD:R_1206_3216Metric_Pad1.42x1.75mm_HandSolder" V 3040 4240 50  0001 C CNN
+F 3 "~" H 3000 4250 50  0001 C CNN
+F 4 "Vishay Dale" H 3000 4250 50  0001 C CNN "Man"
+F 5 "DigiKey" H 3000 4250 50  0001 C CNN "Vendor"
+F 6 "541-3983-1-ND" H 3000 4250 50  0001 C CNN "VendorPN"
+	1    3000 4250
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C2
+U 1 1 5FD9D300
+P 2250 3850
+F 0 "C2" H 2365 3896 50  0000 L CNN
+F 1 "5.6n" H 2365 3805 50  0000 L CNN
+F 2 "Capacitor_THT:C_Disc_D5.1mm_W3.2mm_P5.00mm" H 2288 3700 50  0001 C CNN
+F 3 "https://product.tdk.com/info/en/documents/chara_sheet/FG24C0G2A562JNT00.pdf" H 2250 3850 50  0001 C CNN
+F 4 "DigiKey" H 2250 3850 50  0001 C CNN "Vendor"
+F 5 "445-181255-ND" H 2250 3850 50  0001 C CNN "VendorPN"
+	1    2250 3850
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR01
+U 1 1 5FD8C74A
+P 1200 4100
+F 0 "#PWR01" H 1200 3850 50  0001 C CNN
+F 1 "GND" H 1205 3927 50  0000 C CNN
+F 2 "" H 1200 4100 50  0001 C CNN
+F 3 "" H 1200 4100 50  0001 C CNN
+	1    1200 4100
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1400 3650 1550 3650
+Wire Wire Line
+	1550 3700 1550 3650
+Connection ~ 1550 3650
+Wire Wire Line
+	1550 3650 1750 3650
+Wire Wire Line
+	2050 3650 2250 3650
+Wire Wire Line
+	3000 3650 3000 3700
+Wire Wire Line
+	2600 3700 2600 3650
+Connection ~ 2600 3650
+Wire Wire Line
+	2600 3650 3000 3650
+Wire Wire Line
+	2250 3700 2250 3650
+Connection ~ 2250 3650
+Wire Wire Line
+	2250 3650 2600 3650
+Wire Wire Line
+	3000 4000 3000 4050
+Wire Wire Line
+	1550 4000 1550 4050
+Wire Wire Line
+	1550 4050 1200 4050
+Wire Wire Line
+	1200 4050 1200 4100
+Wire Wire Line
+	1200 3850 1200 4050
+Connection ~ 1200 4050
+Wire Wire Line
+	1550 4050 2250 4050
+Wire Wire Line
+	2600 4050 2600 4000
+Connection ~ 1550 4050
+Wire Wire Line
+	2250 4000 2250 4050
+Connection ~ 2250 4050
+Wire Wire Line
+	2250 4050 2600 4050
+$Comp
+L power:GND #PWR03
+U 1 1 5FDC28AD
+P 3000 4450
+F 0 "#PWR03" H 3000 4200 50  0001 C CNN
+F 1 "GND" H 3005 4277 50  0000 C CNN
+F 2 "" H 3000 4450 50  0001 C CNN
+F 3 "" H 3000 4450 50  0001 C CNN
+	1    3000 4450
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3000 4450 3000 4400
+Wire Wire Line
+	3000 4050 3350 4050
+Connection ~ 3000 4050
+Wire Wire Line
+	3000 4050 3000 4100
+Text Label 3350 4050 0    50   ~ 0
+Vdet
+$Comp
+L WH_Display_Character:LCD-S301C31TF U4
+U 1 1 5FDDD15D
+P 8650 5050
+F 0 "U4" H 9728 6521 50  0000 L CNN
+F 1 "LCD-S301C31TF" H 9728 6430 50  0000 L CNN
+F 2 "WH_Display_Character:LCD-S301C31TF" H 8000 4750 50  0001 C CNN
+F 3 "https://www.lumex.com/datasheet/LCD-S301C31TF" H 8000 4750 50  0001 C CNN
+F 4 "Lumex Opto/Components Inc." H 8650 5050 50  0001 C CNN "Man"
+F 5 "DigiKey" H 8650 5050 50  0001 C CNN "Vendor"
+F 6 "67-1799-ND" H 8650 5050 50  0001 C CNN "VendorPN"
+	1    8650 5050
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8550 2350 8500 2350
+Wire Wire Line
+	8500 2350 8500 2650
+Wire Wire Line
+	8500 2650 8550 2650
+Wire Wire Line
+	8500 2650 8500 2750
+Wire Wire Line
+	8500 2750 8550 2750
+Connection ~ 8500 2650
+Wire Wire Line
+	8500 2750 8500 2950
+Wire Wire Line
+	8500 2950 8550 2950
+Connection ~ 8500 2750
+Text Label 8250 4750 2    50   ~ 0
+LCD_COM
+Wire Wire Line
+	8550 4750 8350 4750
+Text Label 8250 2850 2    50   ~ 0
+LCD_COM
+Wire Wire Line
+	8250 2850 8550 2850
+Text Label 8250 2950 2    50   ~ 0
+LCD1_ADEG
+Text Label 8250 2550 2    50   ~ 0
+LCD1_C
+Text Label 8250 2450 2    50   ~ 0
+LCD1_B
+Wire Wire Line
+	8250 2950 8500 2950
+Connection ~ 8500 2950
+Wire Wire Line
+	8250 2550 8550 2550
+Wire Wire Line
+	8250 2450 8550 2450
+Text Label 8250 4950 2    50   ~ 0
+LCD_DP2
+Text Label 8250 4550 2    50   ~ 0
+LCD3_G
+Text Label 8250 4450 2    50   ~ 0
+LCD3_F
+Text Label 8250 4350 2    50   ~ 0
+LCD3_E
+Text Label 8250 4250 2    50   ~ 0
+LCD3_D
+Text Label 8250 4150 2    50   ~ 0
+LCD3_C
+Text Label 8250 4050 2    50   ~ 0
+LCD3_B
+Text Label 8250 3950 2    50   ~ 0
+LCD3_A
+Text Label 8250 3750 2    50   ~ 0
+LCD2_G
+Text Label 8250 3650 2    50   ~ 0
+LCD2_F
+Text Label 8250 3550 2    50   ~ 0
+LCD2_E
+Text Label 8250 3450 2    50   ~ 0
+LCD2_D
+Text Label 8250 3350 2    50   ~ 0
+LCD2_C
+Text Label 8250 3250 2    50   ~ 0
+LCD2_B
+Text Label 8250 3150 2    50   ~ 0
+LCD2_A
+Wire Wire Line
+	8250 4550 8550 4550
+Wire Wire Line
+	8250 4450 8550 4450
+Wire Wire Line
+	8250 4350 8550 4350
+Wire Wire Line
+	8250 4950 8550 4950
+Wire Wire Line
+	8250 4250 8550 4250
+Wire Wire Line
+	8250 4150 8550 4150
+Wire Wire Line
+	8250 4050 8550 4050
+Wire Wire Line
+	8250 3950 8550 3950
+Wire Wire Line
+	8250 3750 8550 3750
+Wire Wire Line
+	8250 3650 8550 3650
+Wire Wire Line
+	8250 3550 8550 3550
+Wire Wire Line
+	8250 3450 8550 3450
+Wire Wire Line
+	8250 3350 8550 3350
+Wire Wire Line
+	8250 3250 8550 3250
+Wire Wire Line
+	8250 3150 8550 3150
+Text Label 7150 4450 0    50   ~ 0
+LCD2_G
+Text Label 7150 4350 0    50   ~ 0
+LCD2_F
+Text Label 7150 3950 0    50   ~ 0
+LCD2_E
+Text Label 7150 4050 0    50   ~ 0
+LCD2_D
+Text Label 7150 4150 0    50   ~ 0
+LCD2_C
+Text Label 7150 3850 0    50   ~ 0
+LCD2_B
+Text Label 7150 4250 0    50   ~ 0
+LCD2_A
+Wire Wire Line
+	5150 2950 5450 2950
+Wire Wire Line
+	5150 3050 5450 3050
+Wire Wire Line
+	5150 3150 5450 3150
+Wire Wire Line
+	5150 3350 5450 3350
+Wire Wire Line
+	5150 3450 5450 3450
+Wire Wire Line
+	5150 3550 5450 3550
+Text Label 7150 4550 0    50   ~ 0
+LCD_DP2
+Wire Wire Line
+	5150 3650 5450 3650
+Text Label 7150 3250 0    50   ~ 0
+LCD_COM
+Text Label 7150 3150 0    50   ~ 0
+LCD1_ADEG
+Text Label 7150 3050 0    50   ~ 0
+LCD1_B
+Text Label 7150 2950 0    50   ~ 0
+LCD1_C
+Text Label 5150 3350 2    50   ~ 0
+LCD3_G
+Text Label 5150 3150 2    50   ~ 0
+LCD3_F
+Text Label 5150 3550 2    50   ~ 0
+LCD3_E
+Text Label 5150 3650 2    50   ~ 0
+LCD3_D
+Text Label 5150 3450 2    50   ~ 0
+LCD3_C
+Text Label 5150 2950 2    50   ~ 0
+LCD3_B
+Text Label 5150 3050 2    50   ~ 0
+LCD3_A
+Wire Wire Line
+	7150 3850 6850 3850
+Wire Wire Line
+	7150 3950 6850 3950
+Wire Wire Line
+	7150 4050 6850 4050
+Wire Wire Line
+	7150 4150 6850 4150
+Wire Wire Line
+	7150 4250 6850 4250
+Wire Wire Line
+	7150 4350 6850 4350
+Wire Wire Line
+	7150 4450 6850 4450
+Wire Wire Line
+	6850 3250 7150 3250
+Wire Wire Line
+	6850 3150 7150 3150
+Wire Wire Line
+	6850 3050 7150 3050
+Wire Wire Line
+	6850 2950 7150 2950
+Text Label 7150 3450 0    50   ~ 0
+Vdet
+Wire Wire Line
+	7150 3450 6850 3450
+$Comp
+L power:GND #PWR010
+U 1 1 5FE8525F
+P 6150 4950
+F 0 "#PWR010" H 6150 4700 50  0001 C CNN
+F 1 "GND" H 6155 4777 50  0000 C CNN
+F 2 "" H 6150 4950 50  0001 C CNN
+F 3 "" H 6150 4950 50  0001 C CNN
+	1    6150 4950
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6150 4950 6150 4850
+$Comp
+L Connector:Conn_01x05_Male J2
+U 1 1 5FE898ED
+P 7300 5650
+F 0 "J2" H 7272 5674 50  0000 R CNN
+F 1 "Conn_01x05_Male" H 7272 5583 50  0000 R CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x05_P2.54mm_Vertical" H 7300 5650 50  0001 C CNN
+F 3 "~" H 7300 5650 50  0001 C CNN
+F 4 "Adam Tech" H 7300 5650 50  0001 C CNN "Man"
+F 5 "DigiKey" H 7300 5650 50  0001 C CNN "Vendor"
+F 6 "2057-PH1RA-05-UA-ND" H 7300 5650 50  0001 C CNN "VendorPN"
+	1    7300 5650
+	-1   0    0    -1  
+$EndComp
+Text Label 6900 5450 2    50   ~ 0
+~MCLR
+Text Label 6900 5850 2    50   ~ 0
+ICSPCLK
+Text Label 6900 5750 2    50   ~ 0
+ICSPDAT
+Wire Wire Line
+	6900 5450 7100 5450
+Wire Wire Line
+	6900 5750 7100 5750
+Wire Wire Line
+	6900 5850 7100 5850
+Text Label 4500 4150 2    50   ~ 0
+~MCLR
+$Comp
+L power:VDD #PWR011
+U 1 1 5FEA0D83
+P 6500 5550
+F 0 "#PWR011" H 6500 5400 50  0001 C CNN
+F 1 "VDD" V 6515 5677 50  0000 L CNN
+F 2 "" H 6500 5550 50  0001 C CNN
+F 3 "" H 6500 5550 50  0001 C CNN
+	1    6500 5550
+	0    -1   -1   0   
+$EndComp
+$Comp
+L power:GND #PWR012
+U 1 1 5FE9DF8D
+P 6500 5650
+F 0 "#PWR012" H 6500 5400 50  0001 C CNN
+F 1 "GND" V 6505 5522 50  0000 R CNN
+F 2 "" H 6500 5650 50  0001 C CNN
+F 3 "" H 6500 5650 50  0001 C CNN
+	1    6500 5650
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	6500 5650 7100 5650
+Wire Wire Line
+	6500 5550 7100 5550
+Text Label 7350 3650 0    50   ~ 0
+ICSPDAT
+Text Label 7350 3550 0    50   ~ 0
+ICSPCLK
+Text Notes 7350 5350 2    50   Italic 10
+ICSP
+$Comp
+L Device:R_US R7
+U 1 1 5FEC11AE
+P 5200 4150
+F 0 "R7" V 4995 4150 50  0000 C CNN
+F 1 "75" V 5086 4150 50  0000 C CNN
+F 2 "Resistor_SMD:R_1206_3216Metric_Pad1.42x1.75mm_HandSolder" V 5240 4140 50  0001 C CNN
+F 3 "~" H 5200 4150 50  0001 C CNN
+F 4 "Yageo" V 5200 4150 50  0001 C CNN "Man"
+F 5 "DigiKey" V 5200 4150 50  0001 C CNN "Vendor"
+F 6 "311-75.0FRCT-ND" V 5200 4150 50  0001 C CNN "VendorPN"
+	1    5200 4150
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	6850 3550 6950 3550
+Wire Wire Line
+	6850 3650 6950 3650
+Wire Wire Line
+	7250 3550 7350 3550
+Wire Wire Line
+	7250 3650 7350 3650
+$Comp
+L power:VDD #PWR07
+U 1 1 5FED7FAF
+P 4600 4000
+F 0 "#PWR07" H 4600 3850 50  0001 C CNN
+F 1 "VDD" H 4615 4173 50  0000 C CNN
+F 2 "" H 4600 4000 50  0001 C CNN
+F 3 "" H 4600 4000 50  0001 C CNN
+	1    4600 4000
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C5
+U 1 1 5FEEC3D3
+P 5850 2300
+F 0 "C5" V 5750 2200 50  0000 C CNN
+F 1 "0.1u" V 5750 2450 50  0000 C CNN
+F 2 "Capacitor_SMD:C_1206_3216Metric_Pad1.42x1.75mm_HandSolder" H 5888 2150 50  0001 C CNN
+F 3 "~" H 5850 2300 50  0001 C CNN
+F 4 "KEMET" V 5850 2300 50  0001 C CNN "Man"
+F 5 "DigiKey" V 5850 2300 50  0001 C CNN "Vendor"
+F 6 "399-C1206C104K5RAC7800CT-ND" V 5850 2300 50  0001 C CNN "VendorPN"
+	1    5850 2300
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:C C6
+U 1 1 5FEEE33B
+P 5850 2550
+F 0 "C6" V 5750 2450 50  0000 C CNN
+F 1 "10n" V 5750 2700 50  0000 C CNN
+F 2 "Capacitor_SMD:C_1206_3216Metric_Pad1.42x1.75mm_HandSolder" H 5888 2400 50  0001 C CNN
+F 3 "~" H 5850 2550 50  0001 C CNN
+F 4 "Samsung Electro-Mechanics" V 5850 2550 50  0001 C CNN "Man"
+F 5 "DigiKey" V 5850 2550 50  0001 C CNN "Vendor"
+F 6 "1276-3077-1-ND" V 5850 2550 50  0001 C CNN "VendorPN"
+	1    5850 2550
+	0    1    1    0   
+$EndComp
+$Comp
+L power:GND #PWR08
+U 1 1 5FEEFD73
+P 5550 2550
+F 0 "#PWR08" H 5550 2300 50  0001 C CNN
+F 1 "GND" V 5555 2422 50  0000 R CNN
+F 2 "" H 5550 2550 50  0001 C CNN
+F 3 "" H 5550 2550 50  0001 C CNN
+	1    5550 2550
+	0    1    1    0   
+$EndComp
+$Comp
+L power:VDD #PWR09
+U 1 1 5FEF0BB9
+P 6150 2100
+F 0 "#PWR09" H 6150 1950 50  0001 C CNN
+F 1 "VDD" H 6165 2273 50  0000 C CNN
+F 2 "" H 6150 2100 50  0001 C CNN
+F 3 "" H 6150 2100 50  0001 C CNN
+	1    6150 2100
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5700 2550 5650 2550
+Wire Wire Line
+	5700 2300 5650 2300
+Wire Wire Line
+	5650 2300 5650 2550
+Connection ~ 5650 2550
+Wire Wire Line
+	5650 2550 5550 2550
+Wire Wire Line
+	6000 2550 6150 2550
+Wire Wire Line
+	6150 2550 6150 2650
+Wire Wire Line
+	6000 2300 6150 2300
+Wire Wire Line
+	6150 2300 6150 2100
+Wire Wire Line
+	6150 2550 6150 2300
+Connection ~ 6150 2550
+Connection ~ 6150 2300
+$Comp
+L power:GND #PWR02
+U 1 1 5FF3A76D
+P 3000 3300
+F 0 "#PWR02" H 3000 3050 50  0001 C CNN
+F 1 "GND" H 3005 3127 50  0000 C CNN
+F 2 "" H 3000 3300 50  0001 C CNN
+F 3 "" H 3000 3300 50  0001 C CNN
+	1    3000 3300
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:VDD #PWR04
+U 1 1 5FF3AE73
+P 3450 2800
+F 0 "#PWR04" H 3450 2650 50  0001 C CNN
+F 1 "VDD" H 3465 2973 50  0000 C CNN
+F 2 "" H 3450 2800 50  0001 C CNN
+F 3 "" H 3450 2800 50  0001 C CNN
+	1    3450 2800
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2650 2850 2500 2850
+Wire Wire Line
+	3350 2850 3450 2850
+Wire Wire Line
+	3450 2850 3450 2800
+$Comp
+L Device:C C4
+U 1 1 5FF47E40
+P 3450 3100
+F 0 "C4" H 3565 3146 50  0000 L CNN
+F 1 "10u" H 3565 3055 50  0000 L CNN
+F 2 "Capacitor_SMD:C_1206_3216Metric_Pad1.42x1.75mm_HandSolder" H 3488 2950 50  0001 C CNN
+F 3 "~" H 3450 3100 50  0001 C CNN
+F 4 "Samsung Electro-Mechanics" H 3450 3100 50  0001 C CNN "Man"
+F 5 "DigiKey" H 3450 3100 50  0001 C CNN "Vendor"
+F 6 "1276-6641-1-ND" H 3450 3100 50  0001 C CNN "VendorPN"
+	1    3450 3100
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C1
+U 1 1 5FF49E8A
+P 2500 3100
+F 0 "C1" H 2615 3146 50  0000 L CNN
+F 1 "1u 100V" H 2615 3055 50  0000 L CNN
+F 2 "Capacitor_SMD:C_1206_3216Metric_Pad1.42x1.75mm_HandSolder" H 2538 2950 50  0001 C CNN
+F 3 "~" H 2500 3100 50  0001 C CNN
+F 4 "Samsung Electro-Mechanics" H 2500 3100 50  0001 C CNN "Man"
+F 5 "DigiKey" H 2500 3100 50  0001 C CNN "Vendor"
+F 6 "1276-1838-1-ND" H 2500 3100 50  0001 C CNN "VendorPN"
+	1    2500 3100
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3450 3250 3000 3250
+Wire Wire Line
+	3000 3200 3000 3250
+Connection ~ 3000 3250
+Wire Wire Line
+	3000 3250 2500 3250
+Wire Wire Line
+	3000 3300 3000 3250
+Wire Wire Line
+	2500 2950 2500 2850
+Connection ~ 2500 2850
+Wire Wire Line
+	3450 2950 3450 2850
+Connection ~ 3450 2850
+$Comp
+L WH_Regulator_Linear:ZXTR2005Z U1
+U 1 1 5FF6B78C
+P 3000 2850
+F 0 "U1" H 3000 3140 50  0000 C CNN
+F 1 "ZXTR2005Z" H 3000 3049 50  0000 C CNN
+F 2 "Package_TO_SOT_SMD:SOT-89-3" H 2200 2375 50  0001 C CNN
+F 3 "https://www.diodes.com/assets/Datasheets/ZXTR2005Z.pdf" H 3000 2850 50  0001 C CNN
+F 4 "Diodes Incorporated" H 3950 2550 50  0001 C CNN "Man"
+F 5 "DigiKey" H 3700 2400 50  0001 C CNN "Vendor"
+F 6 "ZXTR2005Z-13DICT-ND" H 4350 2400 50  0001 C CNN "VendorPN"
+	1    3000 2850
+	1    0    0    -1  
+$EndComp
+$Comp
+L frebourg_MCU_Microchip_PIC18:PIC18F24Q10-xSS U3
+U 1 1 5FDE0746
+P 6150 3750
+F 0 "U3" H 6350 4900 50  0000 C CNN
+F 1 "PIC18F24Q10-xSP" H 6650 4800 50  0000 C CNN
+F 2 "Package_SO:SSOP-28_5.3x10.2mm_P0.65mm" H 6150 3750 50  0001 C CNN
+F 3 "http://ww1.microchip.com/downloads/en/DeviceDoc/PIC18F2425Q10-28-Pin-Low-Power-High-Performance-MCU-40001945C.pdf" H 6250 2400 50  0001 C CNN
+F 4 "Microchip Technology" H 6150 3750 50  0001 C CNN "Man"
+F 5 "DigiKey" H 6150 3750 50  0001 C CNN "Vendor"
+F 6 "PIC18F24Q10-I/SS-ND" H 6150 3750 50  0001 C CNN "VendorPN"
+	1    6150 3750
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C3
+U 1 1 5FDEDA54
+P 2600 3850
+F 0 "C3" H 2715 3896 50  0000 L CNN
+F 1 "5.6n" H 2715 3805 50  0000 L CNN
+F 2 "Capacitor_THT:C_Disc_D5.1mm_W3.2mm_P5.00mm" H 2638 3700 50  0001 C CNN
+F 3 "https://product.tdk.com/info/en/documents/chara_sheet/FG24C0G2A562JNT00.pdf" H 2600 3850 50  0001 C CNN
+F 4 "DigiKey" H 2600 3850 50  0001 C CNN "Vendor"
+F 5 "445-181255-ND" H 2600 3850 50  0001 C CNN "VendorPN"
+	1    2600 3850
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6850 4550 7150 4550
+$Comp
+L Reference_Voltage:LM4040DBZ-4.1 U2
+U 1 1 5FE75035
+P 4000 3450
+F 0 "U2" V 4046 3362 50  0000 R CNN
+F 1 "LM4040CYM3-4.1" V 3955 3362 50  0000 R CNN
+F 2 "Package_TO_SOT_SMD:SOT-23" H 4000 3250 50  0001 C CIN
+F 3 "http://www.ti.com/lit/ds/symlink/lm4040-n.pdf" H 4000 3450 50  0001 C CIN
+F 4 "Microchip Technology" V 4000 3450 50  0001 C CNN "Man"
+F 5 "DigiKey" V 4000 3450 50  0001 C CNN "Vendor"
+F 6 "576-2568-1-ND" V 4000 3450 50  0001 C CNN "VendorPN"
+	1    4000 3450
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Device:R_US R5
+U 1 1 5FE75F70
+P 4000 3050
+F 0 "R5" H 3932 3004 50  0000 R CNN
+F 1 "2.4k" H 3932 3095 50  0000 R CNN
+F 2 "Resistor_SMD:R_1206_3216Metric_Pad1.42x1.75mm_HandSolder" V 4040 3040 50  0001 C CNN
+F 3 "~" H 4000 3050 50  0001 C CNN
+F 4 "Yageo" H 4000 3050 50  0001 C CNN "Man"
+F 5 "DigiKey" H 4000 3050 50  0001 C CNN "Vendor"
+F 6 "311-2.40KFRCT-ND" H 4000 3050 50  0001 C CNN "VendorPN"
+	1    4000 3050
+	-1   0    0    1   
+$EndComp
+$Comp
+L power:GND #PWR06
+U 1 1 5FE884C6
+P 4000 3650
+F 0 "#PWR06" H 4000 3400 50  0001 C CNN
+F 1 "GND" H 4005 3477 50  0000 C CNN
+F 2 "" H 4000 3650 50  0001 C CNN
+F 3 "" H 4000 3650 50  0001 C CNN
+	1    4000 3650
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:VDD #PWR05
+U 1 1 5FE887DA
+P 4000 2850
+F 0 "#PWR05" H 4000 2700 50  0001 C CNN
+F 1 "VDD" H 4015 3023 50  0000 C CNN
+F 2 "" H 4000 2850 50  0001 C CNN
+F 3 "" H 4000 2850 50  0001 C CNN
+	1    4000 2850
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4000 3650 4000 3600
+Wire Wire Line
+	4000 3300 4000 3250
+Wire Wire Line
+	4000 2900 4000 2850
+Wire Wire Line
+	4000 3250 5450 3250
+Connection ~ 4000 3250
+Wire Wire Line
+	4000 3250 4000 3200
+Wire Wire Line
+	4500 4150 5000 4150
+Wire Wire Line
+	4600 4000 4600 4050
+Wire Wire Line
+	4950 4050 5000 4050
+Wire Wire Line
+	5000 4050 5000 4150
+Wire Wire Line
+	4600 4050 4650 4050
+Wire Wire Line
+	5350 4150 5450 4150
+Wire Wire Line
+	5050 4150 5000 4150
+Connection ~ 5000 4150
+Text Label 4400 3250 0    50   ~ 0
+Vref+
+$Comp
+L Device:R_US R6
+U 1 1 5FED0C24
+P 4800 4050
+F 0 "R6" V 4600 4000 50  0000 L CNN
+F 1 "10k 1%" V 4700 4000 50  0000 L CNN
+F 2 "Resistor_SMD:R_1206_3216Metric_Pad1.42x1.75mm_HandSolder" V 4840 4040 50  0001 C CNN
+F 3 "~" H 4800 4050 50  0001 C CNN
+F 4 "Vishay Dale" H 4800 4050 50  0001 C CNN "Man"
+F 5 "DigiKey" H 4800 4050 50  0001 C CNN "Vendor"
+F 6 "541-3983-1-ND" H 4800 4050 50  0001 C CNN "VendorPN"
+	1    4800 4050
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R_US R8
+U 1 1 5FED24FB
+P 7100 3550
+F 0 "R8" V 7050 3400 50  0000 C CNN
+F 1 "75" V 7050 3700 50  0000 C CNN
+F 2 "Resistor_SMD:R_1206_3216Metric_Pad1.42x1.75mm_HandSolder" V 7140 3540 50  0001 C CNN
+F 3 "~" H 7100 3550 50  0001 C CNN
+F 4 "Yageo" V 7100 3550 50  0001 C CNN "Man"
+F 5 "DigiKey" V 7100 3550 50  0001 C CNN "Vendor"
+F 6 "311-75.0FRCT-ND" V 7100 3550 50  0001 C CNN "VendorPN"
+	1    7100 3550
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R_US R9
+U 1 1 5FED2BE4
+P 7100 3650
+F 0 "R9" V 7150 3500 50  0000 C CNN
+F 1 "75" V 7150 3800 50  0000 C CNN
+F 2 "Resistor_SMD:R_1206_3216Metric_Pad1.42x1.75mm_HandSolder" V 7140 3640 50  0001 C CNN
+F 3 "~" H 7100 3650 50  0001 C CNN
+F 4 "Yageo" V 7100 3650 50  0001 C CNN "Man"
+F 5 "DigiKey" V 7100 3650 50  0001 C CNN "Vendor"
+F 6 "311-75.0FRCT-ND" V 7100 3650 50  0001 C CNN "VendorPN"
+	1    7100 3650
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	8350 4850 8350 4750
+Wire Wire Line
+	8350 4850 8550 4850
+Connection ~ 8350 4750
+Wire Wire Line
+	8350 4750 8250 4750
+NoConn ~ 6850 3350
+$Comp
+L power:PWR_FLAG #FLG0101
+U 1 1 5FF58C30
+P 2500 2800
+F 0 "#FLG0101" H 2500 2875 50  0001 C CNN
+F 1 "PWR_FLAG" H 2500 2973 50  0000 C CNN
+F 2 "" H 2500 2800 50  0001 C CNN
+F 3 "~" H 2500 2800 50  0001 C CNN
+	1    2500 2800
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2500 2800 2500 2850
+$Comp
+L power:PWR_FLAG #FLG0102
+U 1 1 5FF5DDCF
+P 1100 4050
+F 0 "#FLG0102" H 1100 4125 50  0001 C CNN
+F 1 "PWR_FLAG" V 1100 4177 50  0000 L CNN
+F 2 "" H 1100 4050 50  0001 C CNN
+F 3 "~" H 1100 4050 50  0001 C CNN
+	1    1100 4050
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	1100 4050 1200 4050
+$Comp
+L Mechanical:Heatsink HS1
+U 1 1 5FF7164E
+P 1450 4100
+F 0 "HS1" V 1500 4450 50  0000 R CNN
+F 1 "10x10mm Ceramic" V 1400 5000 50  0000 R CNN
+F 2 "WH_Mechanical:Heatsink_Ceramic_Flat_10x10mm" H 1462 4100 50  0001 C CNN
+F 3 "http://www.tglobaltechnology.com/uploads/files/tds/XL-25.pdf" H 1462 4100 50  0001 C CNN
+F 4 "t-Global Technology" H 1450 4100 50  0001 C CNN "Man"
+F 5 "DigiKey" H 1450 4100 50  0001 C CNN "Vendor"
+F 6 "1168-XL25-10-10-2.0-ND" H 1450 4100 50  0001 C CNN "VendorPN"
+	1    1450 4100
+	-1   0    0    1   
+$EndComp
+$Comp
+L Mechanical:Heatsink HS2
+U 1 1 5FF73E03
+P 1700 4100
+F 0 "HS2" V 1750 4450 50  0000 R CNN
+F 1 "10x10mm Ceramic" V 1650 5000 50  0000 R CNN
+F 2 "WH_Mechanical:Heatsink_Ceramic_Flat_10x10mm" H 1712 4100 50  0001 C CNN
+F 3 "http://www.tglobaltechnology.com/uploads/files/tds/XL-25.pdf" H 1712 4100 50  0001 C CNN
+F 4 "t-Global Technology" H 1700 4100 50  0001 C CNN "Man"
+F 5 "DigiKey" H 1700 4100 50  0001 C CNN "Vendor"
+F 6 "1168-XL25-10-10-2.0-ND" H 1700 4100 50  0001 C CNN "VendorPN"
+	1    1700 4100
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	1550 3650 1550 2850
+Wire Wire Line
+	1550 2850 1750 2850
+Wire Wire Line
+	2050 2850 2100 2850
+$Comp
+L Device:D_Schottky D2
+U 1 1 5FE53772
+P 1900 2850
+F 0 "D2" H 1900 2633 50  0000 C CNN
+F 1 "BAT46" H 1900 2724 50  0000 C CNN
+F 2 "Diode_THT:D_DO-34_SOD68_P7.62mm_Horizontal" H 1900 2850 50  0001 C CNN
+F 3 "https://www.vishay.com/docs/85662/bat46.pdf" H 1900 2850 50  0001 C CNN
+F 4 "Vishay" H 1900 2850 50  0001 C CNN "Man"
+F 5 "DigiKey" H 1900 2850 50  0001 C CNN "Vendor"
+F 6 "BAT46CT-ND" H 1900 2850 50  0001 C CNN "VendorPN"
+	1    1900 2850
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	2400 2850 2500 2850
+$Comp
+L Device:R_US R2
+U 1 1 5FF6C690
+P 2250 2850
+F 0 "R2" V 2045 2850 50  0000 C CNN
+F 1 "10" V 2136 2850 50  0000 C CNN
+F 2 "Resistor_SMD:R_1206_3216Metric_Pad1.42x1.75mm_HandSolder" V 2290 2840 50  0001 C CNN
+F 3 "~" H 2250 2850 50  0001 C CNN
+F 4 "Vishay Dale" V 2250 2850 50  0001 C CNN "Man"
+F 5 "DigiKey" V 2250 2850 50  0001 C CNN "Vendor"
+F 6 "541-3981-1-ND" V 2250 2850 50  0001 C CNN "VendorPN"
+	1    2250 2850
+	0    1    1    0   
+$EndComp
+$EndSCHEMATC

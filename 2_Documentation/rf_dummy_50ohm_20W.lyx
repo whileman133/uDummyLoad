@@ -1,0 +1,4690 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass memoir
+\begin_preamble
+\renewcommand{\thesection}{\arabic{section}}
+\renewcommand{\thetable}{\arabic{table}}
+\renewcommand{\thefigure}{\arabic{figure}}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\lhead{RF-331: 20W Dummy Load}
+\rhead{ASMV Electrical}
+\cfoot{\thepage}
+
+\definecolor{darkyellow}{RGB}{242, 242, 12}
+\definecolor{gold}{RGB}{207, 180, 59}
+\end_preamble
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement h
+\paperfontsize 14
+\spacing single
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder true
+\pdf_colorlinks true
+\pdf_backref false
+\pdf_pdfusetitle true
+\pdf_quoted_options "linkcolor=blue, urlcolor=blue, citecolor=red"
+\papersize letterpaper
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date true
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 0.75in
+\topmargin 1.25in
+\rightmargin 0.75in
+\bottommargin 0.5in
+\headheight 0.5in
+\headsep 0.5in
+\footskip 0cm
+\columnsep 0.25in
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle headings
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+20W/50Ω 
+\begin_inset Formula $\mu$
+\end_inset
+
+Dummy Load with Wattmeter
+\end_layout
+
+\begin_layout Author
+ASMV Electrical
+\end_layout
+
+\begin_layout Date
+Last Updated: 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+today
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 3cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+Difficulty of Assembly: 3 out of 10
+\begin_inset Newline newline
+\end_inset
+
+– Through-Hole Parts Only –
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+tableofcontents*
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Overview
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Overview"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+This micro-size 50Ω RF dummy load with built-in wattmeter is well-suited
+ for testing portable rigs.
+ The glass LCD provides time-average power readings between 0.15 and 20W
+ with 0.1W precision.
+ Batteries are not required, as the unit draws power from the RF source,
+ consuming a maximum of 3.0mA at the full rated input power.
+ The board itself serves as a heatsink provided the operator limits the
+ duration of the RF input.
+ Improve the accuracy by loading a calibration table of up to 60 rows into
+ EEPROM using an Arduino microcontroller.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Characteristics
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="13" columns="6">
+<features booktabs="true" tabularvalignment="middle">
+<column alignment="left" valignment="top" width="6cm">
+<column alignment="left" valignment="top">
+<column alignment="center" valignment="top" width="0pt">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Parameter
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Conditions
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Min.
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Typ.
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Max.
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Unit
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Input power
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.15
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+The wattmeter will not operate when the input power falls below the rated
+ minimum.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+20
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+W
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Peak ac input voltage
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3.9
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+45
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+V
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Wattmeter op.
+ frequency
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+dc
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+To obtain the correct power at dc, double the meter reading.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+50
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+MHz
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Dummy load op.
+ frequency
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+dc
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+150
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+MHz
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="3" alignment="left" valignment="middle" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Uncalibrated error
+\begin_inset Newline newline
+\end_inset
+
+ (
+\begin_inset Formula $f_{in}\le10$
+\end_inset
+
+ MHz)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $P_{in}=1.0$
+\end_inset
+
+W
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+W
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="left" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $P_{in}=20$
+\end_inset
+
+W
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.7
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1.3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+W
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="3" alignment="left" valignment="middle" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Uncalibrated error
+\begin_inset Newline newline
+\end_inset
+
+ (
+\begin_inset Formula $f_{in}=50$
+\end_inset
+
+ MHz)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $P_{in}=1.0$
+\end_inset
+
+W
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+W
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $P_{in}=20$
+\end_inset
+
+W
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1.0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2.0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+W
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="3" alignment="left" valignment="middle" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Safe operating time 
+\begin_inset Newline newline
+\end_inset
+
+(
+\begin_inset Formula $T_{A}=25$
+\end_inset
+
+℃)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $P_{in}=10$
+\end_inset
+
+W
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+24
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+sec
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $P_{in}=15$
+\end_inset
+
+W
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+11
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+sec
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $P_{in}=20$
+\end_inset
+
+W
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+sec
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+80% cool-down time
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+This is the cool-off time observed indoors with minimal air flow.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3.5
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+min
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename img/safe-operating-time.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Safe Operating Time versus Input Power and Ambient Temperature
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Assembly Instructions
+\end_layout
+
+\begin_layout Standard
+Before proceeding, make sure that you have the parts in listed 
+\begin_inset CommandInset ref
+LatexCommand vpageref
+reference "tab:Kit-Parts-List"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ and pictured 
+\begin_inset CommandInset ref
+LatexCommand vpageref
+reference "fig:Kit-before-assembly."
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+ The board comes pre-populated with the surface-mount components.
+ To complete the assembly, solder the remaining through-hole components
+ to the board by following the steps 
+\begin_inset CommandInset ref
+LatexCommand vpageref
+reference "subsec:Assembly-Instructions"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+ When complete, your board should look like the picture on 
+\begin_inset CommandInset ref
+LatexCommand vpageref
+reference "subsec:Assembled-Board"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+ For best results, use rosin-core 63/37 PbSn solder, the eutectic alloy
+ that melts at 181℃/361℉.
+\end_layout
+
+\begin_layout Subsection*
+Parts List
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Kit Parts List
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Kit-Parts-List"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Tabular
+<lyxtabular version="3" rows="12" columns="4">
+<features booktabs="true" tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="left" valignment="top">
+<column alignment="left" valignment="top" width="0pt">
+<column alignment="left" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Qty.
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Reference(s)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Description
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Package Marking
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+PCB
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\mu$
+\end_inset
+
+Dummy Load PCB
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+RF-331 Rev.
+ 2
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+D1, D2, D3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+BAT46 Schottky diode
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+BAT46
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+C1, C3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+5.6nF peak-detector caps
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+562
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+C2, C4
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+1
+\begin_inset Formula $\mu$
+\end_inset
+
+F 100V decoupling caps
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+105K
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+C5
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+10nF decoupling cap
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+103
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+R3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+100kΩ 0.1% precision resistor
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\size tiny
+\color brown
+Brown
+\color inherit
+BlackBlack
+\color orange
+Orange
+\color purple
+Violet
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+R4
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+10kΩ 0.1% precision resistor
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\size tiny
+\color brown
+Brown
+\color inherit
+BlackBlack
+\color red
+Red
+\color purple
+Violet
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+R5
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+100kΩ 5% diode resistor
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\size tiny
+\color brown
+Brown
+\color inherit
+Black
+\color orange
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textcolor{darkyellow}{Yellow}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textcolor{gold}{Gold}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+R6
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+2.4kΩ 5%
+\begin_inset Formula $V_{ref}$
+\end_inset
+
+ resistor
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\size tiny
+\color red
+Red
+\color orange
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textcolor{darkyellow}{Yellow}
+\end_layout
+
+\end_inset
+
+
+\color red
+Red
+\color orange
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textcolor{gold}{Gold}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+J1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Male BNC 50Ω PCB-mount
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+—
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+U4
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+24-pin reflective LCD
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+—
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename img/pcb-front.jpg
+	width 70text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+PCB Front
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename img/pcb-back.jpg
+	width 70text%
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+PCB Back
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename img/kit-parts.jpg
+	width 70text%
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Parts
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Kit before assembly.
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Kit-before-assembly."
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+Assembly Steps
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:Assembly-Instructions"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Place and solder the Schottky diodes D1, D2, D3 onto the board.
+ Make sure to orient the diodes so that the cathode band is closer to the
+ pad marked 
+\begin_inset Quotes eld
+\end_inset
+
+K
+\begin_inset Quotes erd
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+Place and solder the peak-detector capacitors C1, C3, the rectifier capacitor
+ C2, and the diode biasing resistor R5 onto the board.
+\end_layout
+
+\begin_layout Enumerate
+Place 
+\series bold
+\shape italic
+but do not solder
+\series default
+\shape default
+ the precision voltage divider resistors R3, R4, the decoupling capacitors
+ C4, C5, and the voltage reference biasing resistor R6 onto the board.
+\end_layout
+
+\begin_layout Enumerate
+Turn the board over and cut leads that protrude out of the LCD area (U4)
+ flush with the board.
+ If necessary, remove the parts to cut the leads.
+ 
+\series bold
+\shape italic
+\color red
+Rough or jagged pieces of metal extending out from the board may damage
+ the LCD.
+\end_layout
+
+\begin_layout Enumerate
+Solder the previously-placed parts R3, R4, C4, C5, R6 to the board.
+\end_layout
+
+\begin_layout Enumerate
+Turn the board over and insert the 24-pin LCD (U4).
+ Make sure to orient the LCD so that the edge with the raised notch aligns
+ with the mark on the silkscreen.
+ Turn over the board and solder the LCD in place.
+\end_layout
+
+\begin_layout Enumerate
+Place and solder the BNC connector J1 onto the board.
+ Apply a rosin flux to outer shield pins before soldering.
+ These pins may require additional heat to form a good joint.
+\end_layout
+
+\begin_layout Enumerate
+Remove the protective film from the LCD.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+Assembled Board
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:Assembled-Board"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename img/pcba-front.jpg
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Front
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename img/pcba-back.jpg
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Back
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Assembled board.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Calibration Instructions
+\end_layout
+
+\begin_layout Standard
+The 
+\begin_inset Formula $\mu$
+\end_inset
+
+DummyLoad stores a calibration table and other configuration settings in
+ the EEPROM of the on-board PIC microcontroller.
+ The table consists of up to 60 rows mapping uncalibrated meter readings
+ to corrected power values.
+ The 
+\begin_inset Formula $\mu$
+\end_inset
+
+DummyLoad linearly interpolates between the provided calibration points.
+ Program the EEPROM using an Arduino board (Uno, Nano, etc) and the provided
+ configuration sketch by following the steps below.
+\end_layout
+
+\begin_layout Enumerate
+Download the 
+\begin_inset CommandInset href
+LatexCommand href
+name "Arduino IDE"
+target "https://www.arduino.cc/en/software"
+literal "false"
+
+\end_inset
+
+ and install it on a computer.
+\end_layout
+
+\begin_layout Enumerate
+Download the 
+\family typewriter
+uDummyLoadConfig
+\family default
+ configuration sketch and open it within the Arduino IDE.
+\end_layout
+
+\begin_layout Enumerate
+Follow the instructions in the configuration sketch to configure the 
+\begin_inset Formula $\mu$
+\end_inset
+
+DummyLoad to operate in 
+\series bold
+\shape italic
+calibration mode
+\series default
+\shape default
+ (to bypass any previously-loaded calibration table) and with 
+\series bold
+\shape italic
+extended 0.001W precision
+\series default
+\shape default
+ (to increase the calibration accuracy.)
+\end_layout
+
+\begin_layout Enumerate
+Perform the calibration measurements by applying known power levels and
+ recording the meter readings.
+ One way to do this is to insert a calibrated wattmeter in series with the
+ feedline; another method is to measure the peak input voltage with a high-imped
+ance oscilloscope and compute the input power as 
+\begin_inset Formula $P_{in}=v_{pk}^{2}/100$
+\end_inset
+
+; yet another is to use a rig with a power output reading you trust.
+\end_layout
+
+\begin_layout Enumerate
+Create a table mapping meter readings in milliwatts (first column) to the
+ known power readings in milliwatts (second column.) 
+\series bold
+\shape italic
+\color red
+Sort the table in ascending order by the column of meter readings.
+ All values should be whole numbers of milliwatts.
+\end_layout
+
+\begin_layout Enumerate
+Follow the instructions in the Arduino sketch to disable calibration mode,
+ set precision back to 0.1W, and load the calibration table.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Configuration Options
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Configuration-Options"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="8" columns="4">
+<features booktabs="true" tabularvalignment="middle">
+<column alignment="left" valignment="top" width="0pt">
+<column alignment="left" valignment="top" width="8cm">
+<column alignment="left" valignment="top" width="0pt">
+<column alignment="left" valignment="top" width="1.75cm">
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size small
+Name
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size small
+Description
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size small
+Default
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size small
+Range
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size small
+precision
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size small
+Selects the meter precision:
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset space \hspace{}
+\length 0.5cm
+\end_inset
+
+Standard (STD): 0.1W
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset space \hspace{}
+\length 0.5cm
+\end_inset
+
+Extended (EXT): 0.001W
+\begin_inset Newline newline
+\end_inset
+
+
+\series bold
+\shape italic
+\color red
+The display scans the last two mV digits in extended mode.
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size small
+STD
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size small
+STD/EXT
+\begin_inset Newline newline
+\end_inset
+
+ (1 bit)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size small
+enableCalibration
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size small
+Enables calibration mode to bypass table lookup so that new calibration
+ readings can be taken.
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size small
+false
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size small
+true/false
+\begin_inset Newline newline
+\end_inset
+
+(1 bit)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size small
+enableDiodeComp
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size small
+Enables peak detector diode drop compensation by measuring the drop across
+ a matched diode.
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size small
+true
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size small
+true/false
+\begin_inset Newline newline
+\end_inset
+
+(1 bit)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size small
+diodeOffsetMillivolt
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size small
+Offset to the measured peak voltage to account for the difference in the
+ current flow between the compensation diode and the peak detector diode
+ [millivolts].
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size small
+17 mV
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size small
+0–65,535
+\begin_inset Newline newline
+\end_inset
+
+(16 bit)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size small
+displayPeriodMillisec
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size small
+Display update time period [milliseconds].
+ 
+\series bold
+\shape italic
+\color red
+
+\begin_inset Newline newline
+\end_inset
+
+The display update routine requires at least 25ms to run.
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size small
+100 ms
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size small
+0–65,535
+\begin_inset Newline newline
+\end_inset
+
+(16 bit)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size small
+samplePeriodMillisec
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size small
+A/D sampling time period [milliseconds].
+ 
+\series bold
+\shape italic
+\color red
+
+\begin_inset Newline newline
+\end_inset
+
+The sampling routine requires at least 10ms to run.
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size small
+50 ms
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size small
+0–255
+\begin_inset Newline newline
+\end_inset
+
+(8 bit)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size small
+calibrationTable
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size small
+Calibration table of up to 60 rows mapping the meter's readings to corrected
+ power values in milliwatts.
+ The 
+\begin_inset Formula $\mu$
+\end_inset
+
+DummyLoad linearly interpolates between the table rows.
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size small
+Absent
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size small
+—
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset Formula $\mu$
+\end_inset
+
+DummyLoad Error Codes
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="7" columns="2">
+<features booktabs="true" tabularvalignment="middle">
+<column alignment="center" valignment="top" width="0pt">
+<column alignment="left" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size small
+Error Code
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size small
+Description
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size small
+01
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size small
+Timeout waiting for master (Arduino) to release DAT/CLK lines.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size small
+02
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size small
+Timeout waiting for master (Arduino) to send data.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size small
+03
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size small
+Receive buffer overflowed 255 bytes.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size small
+04
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size small
+Data header missing or malformed.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size small
+05
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size small
+Calibration table malformed.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size small
+06
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size small
+Calibration table not sorted in ascending order.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Detailed Description
+\end_layout
+
+\begin_layout Standard
+The block diagram of Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Block-Diagram"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ shows the functional units of the dummy-load module—primarily, a 50Ω load
+ resistor, a PIC18 microcontroller, and a three-digit liquid crystal display
+ (LCD).
+ The radio-frequency (RF) input powers the PIC18 and LCD via a rectifier
+ followed by linear regulator.
+ The complete electrical schematic appears in Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Electrical-Schematic"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename img/block_diagram.png
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Block Diagram
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Block-Diagram"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The circuit detects the RF envelope voltage with a Schottky-diode peak detector.
+ A 10-bit SAR A/D converter within the microcontroller samples the divided
+ envelope voltage and the voltage across a matched diode to compensate for
+ the diode drop of the peak detector.
+ The PIC18 then computes the average power absorbed by the load resistor
+ as
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+P=\frac{(A_{div}V_{div}+V_{F})^{2}}{2R_{load}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+where 
+\begin_inset Formula $A_{div}=11$
+\end_inset
+
+V/V is the division factor of the voltage divider, 
+\begin_inset Formula $R_{load}=50$
+\end_inset
+
+Ω is the load resistance, 
+\begin_inset Formula $V_{div}$
+\end_inset
+
+ is the voltage measured at the voltage divider output, and 
+\begin_inset Formula $V_{F}$
+\end_inset
+
+ is the forward voltage drop across the detector diode computed from the
+ voltage measured across the compensation diode 
+\begin_inset Formula $V_{diode}$
+\end_inset
+
+.
+ In the 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "subsec:Peak-Detector"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ section, it is shown that 
+\begin_inset Formula $V_{F}\approx V_{diode}+17$
+\end_inset
+
+mV.
+\end_layout
+
+\begin_layout Standard
+From the 10-bit digital code 
+\begin_inset Formula $C_{div}$
+\end_inset
+
+ liberated by the A/D converter, the voltage divider output voltage is
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+V_{div}=\frac{C_{div}}{1023}V_{ref}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+where 
+\begin_inset Formula $V_{ref}=4.096V$
+\end_inset
+
+ is the external 0.1% precision Zener voltage reference.
+ In the following sections, we'll denote the units of 
+\begin_inset Formula $C_{div}$
+\end_inset
+
+ with least-significant bits (LSb).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename img/electrical_schematic.pdf
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Electrical Schematic
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Electrical-Schematic"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+Load Resistor
+\end_layout
+
+\begin_layout Standard
+A 50Ω/45W thick-film resistor dissipates the input RF power 
+\begin_inset Formula $P_{in}$
+\end_inset
+
+.
+ This resistor is housed in a surface-mount package with heatsink pad in
+ contact with the top and bottom ground pours on the circuit board.
+ The board itself serves as the heatsink and its heat capacity limits the
+ maximum time the load is able to withstand input power without damaging
+ the resistive element.
+ See the 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "subsec:Thermal-Considerations"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ Section for details.
+\end_layout
+
+\begin_layout Standard
+Manufacturing variation of the load resistance introduces error in the power
+ reading.
+ The nominal load resistance is 
+\begin_inset Formula $R_{load}=50\Omega$
+\end_inset
+
+ with a tolerance of 
+\begin_inset Formula $t=1\%$
+\end_inset
+
+ and temperature coefficient of 
+\begin_inset Formula $\alpha=100$
+\end_inset
+
+ppm/℃.
+ Over the industrial temperature range, the maximum error in the load resistance
+ is then 
+\begin_inset Formula $\Delta R_{load}=(t/100)R_{load}+(\alpha/10^{6})R_{load}\times65$
+\end_inset
+
+℃, which comes out to 
+\begin_inset Formula $\Delta R_{load}=0.825\Omega$
+\end_inset
+
+.
+ The maximum error in the power reading is
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\Delta P_{err}\approx P_{in}\frac{\Delta R_{load}}{R_{load}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+The error is 0.017W when 
+\begin_inset Formula $P_{in}=1.0$
+\end_inset
+
+W and 0.33W when 
+\begin_inset Formula $P_{in}=20.0$
+\end_inset
+
+W.
+\end_layout
+
+\begin_layout Standard
+At frequencies above 50MHz, the load impedance deviates significantly from
+ 50Ω due to parasitic inductance and capacitance of the thick-film resistor
+ and the circuit-board traces.
+ A lumped-element model of the resistor, resistor case parasitics, and circuit-b
+oard trace parasitics appears in Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Equivalent-Load-Circuit"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+ Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Load-Impedance-vs.F"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ is a computer-generated plot of the resistor's impedance 
+\begin_inset Formula $Z_{R}$
+\end_inset
+
+ and the impedance 
+\begin_inset Formula $Z$
+\end_inset
+
+ seen at the input to the μDummy load.
+ At an input frequency of 10MHz, the impedance differs from 50Ω by 0.075Ω.
+ The resulting error in the power reading is 0.0015W when 
+\begin_inset Formula $P_{in}=1.0$
+\end_inset
+
+W and 0.03W when 
+\begin_inset Formula $P_{in}=20.0$
+\end_inset
+
+W.
+ At 50MHz the difference is 1.88Ω; the error is 0.038W when 
+\begin_inset Formula $P_{in}=1.0$
+\end_inset
+
+W and 0.75W when 
+\begin_inset Formula $P_{in}=20.0$
+\end_inset
+
+W.
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename img/load_impedance_schematic.png
+	width 100col%
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Equivalent Load Circuit
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Equivalent-Load-Circuit"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename img/load_impedance_plot.png
+	width 100col%
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Load Impedance vs.
+ Frequency
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Load-Impedance-vs.F"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+Peak Detector
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:Peak-Detector"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The unit employs a BAT46 Schottky diode and two parallel-connected 5.6nF
+ capacitors to detect the envelope of the RF input voltage.
+ Positive half-cycles of the input forward bias the diode and charge the
+ capacitors to the peak input voltage 
+\begin_inset Formula $V_{pk}$
+\end_inset
+
+; in negative half-cycles, the diode is reverse biased with a maximum reverse
+ voltage of 
+\begin_inset Formula $\max(V_{R})=2V_{pk}$
+\end_inset
+
+.
+ Reverse breakdown occurs at 100V for BAT46, limiting the peak input voltage
+ to 50V and the input power to 
+\begin_inset Formula $V_{pk}^{2}/2R_{load}=50^{2}/100=25$
+\end_inset
+
+W.
+\end_layout
+
+\begin_layout Standard
+The voltage divider loads the peak detector, somewhat reducing its accuracy.
+ The total resistance of the divider is 
+\begin_inset Formula $R_{div}=110k\Omega$
+\end_inset
+
+, drawing a current of approximately 
+\begin_inset Formula $I_{div}=V_{pk}/R_{div}$
+\end_inset
+
+ or about 450μA at 50V envelope voltage.
+ The diode must conduct this current in positive half-cycles to charge the
+ capacitors, resulting in a forward voltage drop 
+\begin_inset Formula $V_{F}$
+\end_inset
+
+ across the diode near 0.3V.
+ The error in the power reading due to to an error in the measured peak
+ voltage of 
+\begin_inset Formula $\Delta V_{err}$
+\end_inset
+
+ is
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\Delta P_{err}\approx\Delta V_{err}\cdot\sqrt{\frac{2P_{in}}{R_{load}}}\label{eq:p_error}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+where 
+\begin_inset Formula $P_{in}$
+\end_inset
+
+ is the input power and 
+\begin_inset Formula $R_{load}=50\Omega$
+\end_inset
+
+ is the load resistance.
+ Setting 
+\begin_inset Formula $\Delta V_{err}=V_{F}$
+\end_inset
+
+, the error due to the diode drop is about 0.06W for 
+\begin_inset Formula $P_{in}=1.0$
+\end_inset
+
+W; for 
+\begin_inset Formula $P_{in}=20$
+\end_inset
+
+W, it is about 0.27W.
+\end_layout
+
+\begin_layout Standard
+The μDummy load measures the voltage across a dc-biased BAT46 diode to partially
+ compensate the drop in the peak detector.
+ A diode from the same production lot as the detector diode is forward biased
+ by the envelope voltage and a 100kΩ resistor.
+ The PIC18 samples the forward voltage across this compensation diode 
+\begin_inset Formula $V_{F(comp)}$
+\end_inset
+
+ and, from this measurement, computes the forward voltage drop across the
+ detector diode 
+\begin_inset Formula $V_{F}$
+\end_inset
+
+ as follows.
+ When forward voltage exceeds several tens of millivolts, the detector and
+ compensation diode currents are
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+I & \approx I_{s}e^{V/\eta V_{T}}\\
+I_{comp} & \approx I_{s}e^{V_{F(comp)}/\eta V_{T}}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+where 
+\begin_inset Formula $I_{s}$
+\end_inset
+
+ is a diode parameter called the saturation current, 
+\begin_inset Formula $V_{T}$
+\end_inset
+
+ is the thermal voltage equal to 0.0259V at room temperature, and 
+\begin_inset Formula $\eta$
+\end_inset
+
+ is the diode ideality factor near 1.0 for Schottky diodes.
+ Dividing the first equation by the second and solving for 
+\begin_inset Formula $V_{F}$
+\end_inset
+
+ results in the formula
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+V_{F}=V_{F(comp)}+V_{T}\ln\left(\frac{I}{I_{comp}}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+The saturation current 
+\begin_inset Formula $I_{s}$
+\end_inset
+
+ cancels out since the diodes are matched.
+ This equation can be further reduced by noting the compensation diode current
+ is 
+\begin_inset Formula $I_{comp}\approx V_{pk}/R_{comp}$
+\end_inset
+
+,where 
+\begin_inset Formula $R_{comp}=100$
+\end_inset
+
+kΩ is the biasing resistance and the average detector diode current is 
+\begin_inset Formula $I\approx V_{pk}/(R_{div}||R_{comp})$
+\end_inset
+
+ where 
+\begin_inset Formula $R_{div}=110$
+\end_inset
+
+kΩ is the voltage divider resistance:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+V_{F}=V_{F(comp)}+V_{T}\ln\left(1+\frac{R_{comp}}{R_{div}}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+At room temperature, 
+\begin_inset Formula $V_{F}=V_{F(comp)}+0.017$
+\end_inset
+
+V; the detector diode voltage equals the compensator diode voltage plus
+ about 17mV.
+ The change in the 17mV offset is less than 
+\begin_inset Formula $\pm4.0$
+\end_inset
+
+mV over the -40℃ to +85℃ industrial temperature range and is neglected in
+ this application due to lack of a calibrated temperature sensor.
+ The PIC18 contains an internal temperature sensor that could be manually
+ calibrated for this application, though this will do little to improve
+ the overall compensation accuracy.
+\end_layout
+
+\begin_layout Standard
+This method of compensation still results in error due to diode mismatch
+ and differences in the conduction methods.
+ The compensation diode is dc-biased, while the current through the detector
+ diode flows in pulses, remaining near zero except at peaks of the RF input,
+ during which the instantaneous detector current 
+\begin_inset Formula $i(t)$
+\end_inset
+
+ will exceed the averaged current 
+\begin_inset Formula $I$
+\end_inset
+
+ used in the above equations.
+ This causes the detector diode's forward voltage drop to exceed the figures
+ predicted by the foregoing equations.
+ Suppose the error in 
+\begin_inset Formula $V_{F}$
+\end_inset
+
+ is limited to about 0.1V maximum.
+ The resulting error in the power reading is then 0.09W when the input power
+ is 20W and 0.02W when the input power is 1W.
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Increasing the voltage divider resistance will reduce the diode drop.
+ Doing so, however, will require insertion of a buffer amplifier at the
+ output of the voltage divider to lower the A/D input impedance below 10kΩ.
+ If 
+\begin_inset Formula $V_{os}$
+\end_inset
+
+ and 
+\begin_inset Formula $I_{os}$
+\end_inset
+
+ are the input voltage and current offsets of an op amp connected in a unity
+ buffer configuration with feedback resistor equal to the parallel combination
+ of the voltage divider resistors 
+\begin_inset Formula $R_{||}=R_{top}R_{bottom}/(R_{top}+R_{bottom})$
+\end_inset
+
+, the error in the envelope voltage is
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Formula 
+\[
+\Delta V_{err}=V_{F}'+(V_{os}+I_{os}R_{||})A_{div}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+where 
+\begin_inset Formula $V_{F}'$
+\end_inset
+
+ is the forward diode drop under the reduced loading and 
+\begin_inset Formula $A_{div}$
+\end_inset
+
+ is the division factor of the voltage divider.
+ The error in the power reading is then 
+\begin_inset Formula $\Delta P_{err}\approx\Delta V_{err}\cdot\sqrt{2P_{in}/R_{load}}$
+\end_inset
+
+.
+ If 
+\begin_inset Formula $R_{top}=10$
+\end_inset
+
+MΩ, 
+\begin_inset Formula $R_{bottom}=1.0$
+\end_inset
+
+MΩ, 
+\begin_inset Formula $V_{os}=1$
+\end_inset
+
+mV, 
+\begin_inset Formula $I_{os}=2$
+\end_inset
+
+pA, and 
+\begin_inset Formula $V_{F}'=0.17$
+\end_inset
+
+V, then 
+\begin_inset Formula $\Delta V_{err}\approx0.2$
+\end_inset
+
+V.
+ At 1W input power, 
+\begin_inset Formula $\Delta P_{err}\approx0.04$
+\end_inset
+
+W; at 20W input power 
+\begin_inset Formula $\Delta P_{err}\approx0.18$
+\end_inset
+
+W.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+Microcontroller and Display
+\end_layout
+
+\begin_layout Standard
+A surface-mount package houses the PIC18 to reduce board area and routing
+ complexity.
+ This PIC18 is powered from a 5V linear regulator and is clocked by an internal
+ 1MHz oscillator (HFINTOSC).
+\end_layout
+
+\begin_layout Standard
+Power readings are output to a three-digit transflective LCD where the digits
+ are 7-segmented.
+ To 
+\begin_inset Quotes eld
+\end_inset
+
+activate
+\begin_inset Quotes erd
+\end_inset
+
+ a segment of a particular digit, the PIC18 alternates the voltage applied
+ to that segment between +5V and -5V at a rate of 30Hz; to disable a segment,
+ the PIC18 drives the segment voltage to zero.
+ One side of the LCD segments contact a common line labeled 
+\begin_inset Quotes eld
+\end_inset
+
+COM
+\begin_inset Quotes erd
+\end_inset
+
+ and separate lines expose the other sides of the segments.
+ There are a total of 24 lines on the display (COM line, 21 segment lines,
+ and 2 decimal point lines), but the PIC18 has enough outputs to drive only
+ two complete digits.
+ The meter need only read up to 20.0W, and thus the first digit is wired
+ to display the numbers 
+\begin_inset Quotes eld
+\end_inset
+
+1
+\begin_inset Quotes erd
+\end_inset
+
+ and 
+\begin_inset Quotes eld
+\end_inset
+
+2
+\begin_inset Quotes erd
+\end_inset
+
+ only, reducing the pin count.
+\end_layout
+
+\begin_layout Standard
+When driving the LCD and performing periodic A/D conversions, the PIC18
+ draws about 800μA from the linear regulator.
+ The external voltage reference draws an additional 600μA from the regulator,
+ and the quiescent current of the linear regulator is about 600μA.
+ The combined power draw of the PIC18 and voltage reference from the RF
+ input is then 
+\begin_inset Formula $(800+600+600)\mu A\cdot V_{pk}$
+\end_inset
+
+.
+ Add to this the power dissipated by the envelope voltage divider and compensati
+on diode 
+\begin_inset Formula $V_{pk}^{2}/(R_{div}||R_{comp})$
+\end_inset
+
+ and the total parasitic power draw is
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+P_{parasitic}=(2.0+V_{pk}/52.4)mA\cdot V_{pk}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+With 
+\begin_inset Formula $V_{pk}=45V$
+\end_inset
+
+ (
+\begin_inset Formula $P_{in}\approx20.0$
+\end_inset
+
+W), 
+\begin_inset Formula $P_{parasitic}=0.148$
+\end_inset
+
+W; with 
+\begin_inset Formula $V_{pk}=10V$
+\end_inset
+
+ (
+\begin_inset Formula $P_{in}\approx1.0W$
+\end_inset
+
+), 
+\begin_inset Formula $P_{parasitic}=0.022$
+\end_inset
+
+W.
+ This parasitic power draw constitutes error in the power reading.
+\end_layout
+
+\begin_layout Subsection*
+Additional Sources of Error
+\end_layout
+
+\begin_layout Standard
+Aside from the diode drop of the peak detector, the parasitic power draw
+ of the PIC18, and load resistance error discussed previously, several other
+ factors contribute to error in the power reading.
+ These include absolute error of the A/D converter, voltage reference drift,
+ and error in the voltage divider resistances.
+\end_layout
+
+\begin_layout Paragraph*
+A/D Converter Error
+\end_layout
+
+\begin_layout Standard
+From the Electrical Specifications section of the PIC18 data-sheet
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+The PIC18 datasheet is available for download on Microchip's website via
+ 
+\begin_inset CommandInset href
+LatexCommand href
+name "this link"
+target "http://ww1.microchip.com/downloads/en/DeviceDoc/PIC18F2425Q10-28-Pin-Low-Power-High-Performance-MCU-40001945C.pdf"
+literal "false"
+
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+, the worst-case integral nonlinearity is 1.0 LSb, worst-case offset error
+ is 2.0 LSb, and worst-case gain error is 2.0 LSb.
+ The maximum error is the sum of these contributions, 5.0 LSb.
+ With a nominal reference voltage of 
+\begin_inset Formula $V_{ref}=4.096$
+\end_inset
+
+V and voltage division factor of 
+\begin_inset Formula $A_{div}=11$
+\end_inset
+
+V/V, the worst-case error in the peak voltage reading is 
+\begin_inset Formula $\Delta V_{err}=11\times4.096\textrm{V}\times(5\textrm{LSb}/1023)=0.22$
+\end_inset
+
+V.
+ The corresponding error in the power reading given by Equation 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:p_error"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+: 0.04W at 
+\begin_inset Formula $P_{in}=1.0$
+\end_inset
+
+W and 0.2W at 
+\begin_inset Formula $P_{in}=20.0$
+\end_inset
+
+W.
+\end_layout
+
+\begin_layout Paragraph*
+Voltage Reference Error
+\end_layout
+
+\begin_layout Standard
+The LM4040 4.096V zener reference has an output voltage error of 
+\begin_inset Formula $\Delta V_{ref}=\pm0.031$
+\end_inset
+
+V over the full industrial operating temperature range
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+The LM4040 datasheet is available for download on Texas Instrument's website
+ via 
+\begin_inset CommandInset href
+LatexCommand href
+name "this link"
+target "https://www.ti.com/lit/ds/symlink/lm4040-n.pdf"
+literal "false"
+
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+.
+ The resulting worst-case error in the peak voltage reading is 
+\begin_inset Formula $\Delta V_{err}=A_{div}\Delta V_{ref}=0.341$
+\end_inset
+
+V, and error in the power reading is 0.07W at 
+\begin_inset Formula $P_{in}=1.0$
+\end_inset
+
+W and 0.3W at 
+\begin_inset Formula $P_{in}=20.0$
+\end_inset
+
+W.
+ The error is lower when operating within a narrower temperature range.
+ For example, within the 10℃ to 40℃ temperature range, 
+\begin_inset Formula $\Delta V_{ref}=\pm0.0164$
+\end_inset
+
+V, giving a power error of 0.036W at 
+\begin_inset Formula $P_{in}=1.0$
+\end_inset
+
+W and 0.16W at 
+\begin_inset Formula $P_{in}=20.0$
+\end_inset
+
+W.
+\end_layout
+
+\begin_layout Paragraph*
+Voltage-Divider Resistance Error
+\end_layout
+
+\begin_layout Standard
+The division factor of the peak detector voltage-divider is 
+\begin_inset Formula $A_{div}=1+R_{top}/R_{bot}$
+\end_inset
+
+ where 
+\begin_inset Formula $R_{top}=100k\Omega$
+\end_inset
+
+ (nominal) is the value of the upper resistor and 
+\begin_inset Formula $R_{bot}=10k\Omega$
+\end_inset
+
+ (nominal) is the value of the lower resistor.
+ The error in the voltage division factor 
+\begin_inset Formula $A_{div}$
+\end_inset
+
+ due to deviation of the resistance values from nominal, 
+\begin_inset Formula $\Delta R_{top}$
+\end_inset
+
+ and 
+\begin_inset Formula $\Delta R_{bot}$
+\end_inset
+
+, is given by the total differential approximation
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\Delta A_{div}\approx\frac{1}{R_{bot}}\Delta R_{top}-\frac{R_{top}}{R_{bot}^{2}}\Delta R_{bot}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+The maximum error occurs when 
+\begin_inset Formula $\Delta R_{top}$
+\end_inset
+
+ and 
+\begin_inset Formula $\Delta R_{bot}$
+\end_inset
+
+ have different signs (i.e.
+ when the upper resistance is higher than nominal and the lower resistance
+ is lower than nominal, or vise versa) and is given by
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\max|\Delta A_{div}|\approx\frac{1}{R_{bot}}|\Delta R_{top}|+\frac{R_{top}}{R_{bot}^{2}}|\Delta R_{bot}|
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+Writing the resistance errors in terms of the resistor percent tolerance
+ 
+\begin_inset Formula $t$
+\end_inset
+
+ as 
+\begin_inset Formula $|\Delta R_{top}|=(t/100)R_{top}$
+\end_inset
+
+ and 
+\begin_inset Formula $|\Delta R_{bot}|=(t/100)R_{bot}$
+\end_inset
+
+ results in the formula
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\max|\Delta A_{div}|\approx\frac{2t}{100}\frac{R_{top}}{R_{bot}}=\frac{2t}{100}(A_{div}-1)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+With a nominal division factor of 
+\begin_inset Formula $A_{div}=11$
+\end_inset
+
+V/V and resistor tolerance of 
+\begin_inset Formula $t=0.1\%$
+\end_inset
+
+, the maximum error in the division factor is 0.02V/V.
+ The corresponding maximum error in the power reading is
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\Delta P_{err}\approx2P_{in}\frac{\max|\Delta A_{div}|}{A_{div}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+The error is 0.004W for 
+\begin_inset Formula $P_{in}=1.0$
+\end_inset
+
+W and 0.073W for 
+\begin_inset Formula $P_{in}=20.0$
+\end_inset
+
+W.
+\end_layout
+
+\begin_layout Subsection*
+Thermal Considerations
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:Thermal-Considerations"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A simplified thermal model of the μDummy load appears in Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Thermal-Diagram"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+ The thermal model is similar to an electrical circuit where power (heat
+ flow) replaces current, temperature replaces voltage, thermal resistance
+ replaces elecrical reistance, and heat capacity replaces capacitance.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename img/thermal_diagram.pdf
+	width 50col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Thermal Diagram
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Thermal-Diagram"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In the model, 
+\begin_inset Formula $T_{e}$
+\end_inset
+
+ is the temperature of the resistive element, 
+\begin_inset Formula $T_{b}$
+\end_inset
+
+ is the temperature of the board (assumed isothermal for simplicity), and
+ 
+\begin_inset Formula $T_{a}$
+\end_inset
+
+ is the temperature of the surroundings.
+ The thermal resistance 
+\begin_inset Formula $r_{eb}$
+\end_inset
+
+ is a measure of the opposition that the resistor's casing presents to heat
+ flow from the internal resistive element to the heatsink pad—i.e from the
+ element (e) and the board (b).
+ For the Ohmite part used in this application, 
+\begin_inset Formula $r_{eb}=3$
+\end_inset
+
+℃/W.
+ Similarly, 
+\begin_inset Formula $r_{ba}$
+\end_inset
+
+ is the heat resistance between the board and the surroundings.
+ Its value depends on the size of the board, air flow rate, and other factors.
+ Last, 
+\begin_inset Formula $C_{b}$
+\end_inset
+
+ is the heat capacity of the board and may be approximated as
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+C_{b}\approx m_{Cu}c_{Cu}+m_{FR4}c_{FR4}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+where 
+\begin_inset Formula $m_{Cu}$
+\end_inset
+
+ is the total mass of copper on the board, 
+\begin_inset Formula $c_{Cu}$
+\end_inset
+
+ is the specific heat capacity of copper, 
+\begin_inset Formula $m_{FR4}$
+\end_inset
+
+ is the mass of FR-4 dielectric in the board's interior, and 
+\begin_inset Formula $c_{FR4}$
+\end_inset
+
+ is the specific heat capacity of FR-4.
+ Substituting the appropriate values, we find 
+\begin_inset Formula $C_{b}\approx4.3$
+\end_inset
+
+J/℃ for the μDummy load board.
+\end_layout
+
+\begin_layout Standard
+Assuming 
+\begin_inset Formula $r_{ba}>>r_{eb}$
+\end_inset
+
+ such that 
+\begin_inset Formula $r_{ba}$
+\end_inset
+
+ may be neglected, the initial temperature of the board is equal to the
+ ambient 
+\begin_inset Formula $T_{b}(0)=T_{a}$
+\end_inset
+
+, and that constant RF power 
+\begin_inset Formula $P_{in}$
+\end_inset
+
+ is applied starting at time 
+\begin_inset Formula $t=0$
+\end_inset
+
+, the solution for 
+\begin_inset Formula $T_{e}$
+\end_inset
+
+ is
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+T_{e}(t)\approx\frac{P_{in}}{C_{b}}t+P_{in}r_{eb}+T_{a}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+The temperature of the resistive element increases linearly with time, eventuall
+y growing large enough to damage the resistor if the input RF power is not
+ removed.
+ According to the power derating curve in the resistor's data-sheet, to
+ safely dissipate the full rated power of 20W, the element must be held
+ below about 
+\begin_inset Formula $T_{e(max)}=110$
+\end_inset
+
+℃.
+ The time at which 
+\begin_inset Formula $T_{e}$
+\end_inset
+
+ reaches 
+\begin_inset Formula $T_{e(max)}$
+\end_inset
+
+ is
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+t_{max}=C_{b}\left(\frac{T_{e(max)}-T_{a}}{P_{in}}-r_{eb}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+A plot of 
+\begin_inset Formula $t_{max}$
+\end_inset
+
+ versus the input power appears in the 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sec:Overview"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ Section at several ambient temperature values.
+ The safe operating time predicted by this formula is somewhat pessimistic
+ since we neglect heat lost to convection and radation from the board to
+ the ambient.
+\end_layout
+
+\begin_layout Standard
+After we remove the input power, the temperature of the board decays exponential
+ly to ambient with the termal time constant
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\tau=r_{ba}C_{b}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+which is the time required for the board temperature to decay to 37% of
+ its initial value above ambient.
+ Based on empirical observation, the board-to-ambient thermal resistance
+ 
+\begin_inset Formula $r_{ba}$
+\end_inset
+
+ is approximately 30℃/W (indoors with minimal air flow).
+ The time constant is then 
+\begin_inset Formula $\tau=(30)(4.3)=129$
+\end_inset
+
+ sec.
+ The 80% cool-down time (the time required for the board to reach 20% of
+ its initial value above ambient) is 
+\begin_inset Formula $1.6\tau=206$
+\end_inset
+
+ sec, or about 3.5 minutes.
+\end_layout
+
+\end_body
+\end_document

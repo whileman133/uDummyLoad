@@ -1,0 +1,21 @@
+Circuit: * C:\users\crossover\Desktop\My Mac Desktop\rf_dummy_50ohm_20W\4_Electrical\rev1\sim\peak_detector_rev3.asc
+
+Direct Newton iteration for .op point succeeded.
+
+Date: Thu Dec 24 10:50:35 2020
+Total elapsed time: 5.181 seconds.
+
+tnom = 27
+temp = 27
+method = modified trap
+totiter = 3203400
+traniter = 3203393
+tranpoints = 922771
+accept = 600398
+rejected = 322373
+matrix size = 9
+fillins = 0
+solver = Normal
+Matrix Compiler1: 350 bytes object code size  0.1/0.1/[0.1]
+Matrix Compiler2: 613 bytes object code size  0.1/0.1/[0.1]
+

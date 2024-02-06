@@ -1,0 +1,17 @@
+* C:\users\crossover\Desktop\My Mac Desktop\rf_dummy_50ohm_20W\4_Electrical\rev1\sim\peak_detector_diode_comp.asc
+C1 out 0 5.6n
+D1 in out BAT46WJ
+V1 in 0 SINE(0 45 {f})
+C2 out 0 5.6n
+R3 out N001 100k
+R4 N001 0 10k
+C3 N001 0 10p
+R1 out D 100k
+D2 D 0 BAT46WJ
+.model D D
+.lib C:\users\crossover\My Documents\LTspiceXVII\lib\cmp\standard.dio
+.param f=10Meg
+.tran 100u
+.temp 40
+.backanno
+.end

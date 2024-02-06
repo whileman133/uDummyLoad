@@ -1,0 +1,21 @@
+Circuit: * C:\users\crossover\Desktop\My Mac Desktop\rf_dummy_50ohm_20W\4_Electrical\sim\peak_detector_power_error_calc.asc
+
+Direct Newton iteration for .op point succeeded.
+
+Date: Sat Jan 09 10:23:00 2021
+Total elapsed time: 36.726 seconds.
+
+tnom = 27
+temp = 27
+method = modified trap
+totiter = 13706505
+traniter = 13706489
+tranpoints = 4471795
+accept = 3019917
+rejected = 1451878
+matrix size = 15
+fillins = 0
+solver = Normal
+Matrix Compiler1: 668 bytes object code size  0.2/0.1/[0.1]
+Matrix Compiler2: off  [0.1]/0.2/0.6
+

@@ -1,0 +1,4 @@
+(sym_lib_table
+  (lib (name "frebourg_MCU_Microchip_PIC18")(type "Legacy")(uri "${KIPRJMOD}/lib/MCU_Microchip_PIC18.lib")(options "")(descr ""))
+  (lib (name "rf_dummy_50ohm_20W-rescue")(type "Legacy")(uri "${KIPRJMOD}/rf_dummy_50ohm_20W-rescue.lib")(options "")(descr ""))
+)

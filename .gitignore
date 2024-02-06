@@ -1,0 +1,10 @@
+1_Management/
+img/
+build/
+debug/
+dist/
+*.png
+*.jpg
+*.jpeg
+*.raw
+fp-info-cache
